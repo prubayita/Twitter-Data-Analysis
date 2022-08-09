@@ -7,6 +7,8 @@ sys.path.append(os.path.abspath(os.path.join("../..")))
 from extract_dataframe import read_json
 from extract_dataframe import TweetDfExtractor
 
+_, tweet_list = read_json("data/africa_twitter_data.json")
+
 # For unit testing the data reading and processing codes, 
 # we will need about 5 tweet samples. 
 # Create a sample not more than 10 tweets and place it in a json file.
