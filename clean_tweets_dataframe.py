@@ -57,5 +57,5 @@ class Clean_Tweets:
         return self.df
 
 if __name__ == "__main__":
-    tweet_df = pd.read_json("../data/africa_twitter_data.json")
+    tweet_df = pd.read_csv("../data/cleaned_fintech_data.csv")
     cleaner = CleanTweets(tweet_df)
