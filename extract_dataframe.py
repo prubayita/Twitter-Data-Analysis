@@ -1,7 +1,7 @@
 import json
 import pandas as pd
 from textblob import TextBlob
-
+import re
 
 def read_json(json_file: str)->list:
     """
@@ -37,7 +37,7 @@ class TweetDfExtractor:
     # an example function
     def find_statuses_count(self)->list:
         statuses_count  = [x['user']['statuses_count'] for x in self.tweets_list]
-        
+        return statuses_count
     def find_full_text(self)->list:
         text = []
         for tweet in self.tweets_list:
@@ -56,7 +56,7 @@ class TweetDfExtractor:
             polarity.append(sentiment.polarity)
             subjectivity.append(sentiment.subjectivity)
         
-        return polarity, self.subjectivity
+        return polarity, subjectivity
 
     def find_created_time(self)->list:
         created_at = [x['created_at'] for x in self.tweets_list]
